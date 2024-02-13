@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
 
-class DabiAnswerNoteTitle extends StatelessWidget {
+class CommonAnswerTitle extends StatelessWidget {
+  final String text;
+  final double fontSize;
+
+  const CommonAnswerTitle({
+    Key? key,
+    required this.text,
+    this.fontSize = 52.0,
+  }) : super(key: key);
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext) {
     return Align(
       alignment: Alignment.topCenter,
       child: Padding(
@@ -10,16 +19,16 @@ class DabiAnswerNoteTitle extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             TextOutline(
-              text: '다비의 해답노트',
-              fontSize: 52.0,
+              text: text,
+              fontSize: fontSize,
               outlineColor: Colors.white,
               fillColor: Colors.black,
               strokeWidth: 5,
             ),
             TextFill(
-              text: '다비의 해답노트',
-              fontSize: 52.0,
-              color: Colors.black,
+              text: text,
+              fontSize: fontSize,
+              color: Colors.black
             ),
           ],
         ),
@@ -47,7 +56,7 @@ class TextOutline extends StatelessWidget {
   Widget build(BuildContext context) {
     return DefaultTextStyle(
       textAlign: TextAlign.center,
-      style: TextStyle(
+      style:TextStyle(
         fontFamily: 'omyu-pretty',
         fontSize: fontSize,
         fontWeight: FontWeight.normal,
@@ -66,7 +75,11 @@ class TextFill extends StatelessWidget {
   final double fontSize;
   final Color color;
 
-  const TextFill({required this.text, required this.fontSize, required this.color});
+  const TextFill({
+    required this.text,
+    required this.fontSize,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {

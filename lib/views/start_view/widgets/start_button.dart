@@ -1,6 +1,10 @@
+import 'package:dabieflutter/controllers/start_screen/start_screen_controller.dart';
 import 'package:flutter/material.dart';
 
 class StartButton extends StatelessWidget {
+  final StartScreenController controller;
+  StartButton({required this.controller});
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,7 +17,8 @@ class StartButton extends StatelessWidget {
           textStyle: TextStyle(fontSize: 20),
         ),
         onPressed: () {
-          print('시작 버튼!!');
+          controller.onButtonClicked();
+          print("시작하기 버튼 클릭");
         },
         child: Column(
           mainAxisSize: MainAxisSize.min,

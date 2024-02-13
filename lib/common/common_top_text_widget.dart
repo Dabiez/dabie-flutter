@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
-class TopTextWidget extends StatelessWidget {
+class CommonTopTextWidget extends StatelessWidget {
+  final String text;
+  const CommonTopTextWidget({Key? key, required this.text}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Align(
@@ -15,7 +18,7 @@ class TopTextWidget extends StatelessWidget {
             fontSize: 24.0,
             fontWeight: FontWeight.normal,
           ),
-          child: Text('여러분의 고민을 들어준다비~'),
+          child: Text(text),
         ),
       ),
     );
