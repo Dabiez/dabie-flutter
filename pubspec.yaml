@@ -30,7 +30,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  flutter_svg: ^2.0.9
+  lottie: ^3.0.0
+  rxdart: ^0.26.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -53,12 +55,27 @@ dev_dependencies:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
-    - assets/
+    - assets/start_screen/start_bg.svg
+    - assets/start_screen/main_character.json
+    - assets/question_screen/question_main_image.svg
+    - assets/loading_screen/balloon_character.svg
+    - assets/loading_screen/loading.json
+    - assets/result_screen/result_bg.svg
+    - assets/result_screen/result_mark.svg
+    - assets/result_screen/smart_characters.svg
+    - assets/icon/back_icon.svg
+    - assets/icon/save_icon.svg
+    - assets/icon/share_icon.svg
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+
+  fonts:
+    - family: omyu-pretty
+      fonts:
+        - asset: assets/fonts/omyu-pretty.ttf
 
   # To add assets to your application, add an assets section, like this:
   # assets:
