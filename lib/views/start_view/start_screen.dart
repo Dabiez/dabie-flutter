@@ -19,7 +19,7 @@ class StartScreen extends StatelessWidget {
         MaterialPageRoute(builder: (context) => QuestionScreen()),
       );
     });
-    // PR 테스트용 주석 입니다.
+
     return MaterialApp(
       home: Scaffold(
         body: Stack(
