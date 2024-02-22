@@ -12,7 +12,7 @@ class StartButton extends StatelessWidget {
       padding: EdgeInsets.all(16.0),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
-          primary: Colors.brown,
+          backgroundColor: Color(0xFF4C3220),
           padding: EdgeInsets.symmetric(horizontal: 50, vertical: 20),
           textStyle: TextStyle(fontSize: 20),
         ),
