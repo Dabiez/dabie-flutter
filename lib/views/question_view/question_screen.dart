@@ -1,13 +1,24 @@
 import 'package:dabieflutter/common/common_answer_title.dart';
 import 'package:dabieflutter/common/common_top_text_widget.dart';
+import 'package:dabieflutter/controllers/question_screen/question_screen_controller.dart';
+import 'package:dabieflutter/views/loading_view/loading_screen.dart';
 import 'package:dabieflutter/views/question_view/widgets/center_character_image.dart';
 import 'package:flutter/material.dart';
 import '../../common/common_button.dart';
 import '../result_view/widgets/background.dart';
 
 class QuestionScreen extends StatelessWidget {
+  final QuestionScreenController controller = QuestionScreenController();
+
   @override
   Widget build(BuildContext context) {
+    controller.buttonClicked.listen((_) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => LoadingScreen()),
+      );
+    });
+
     return MaterialApp(
       home: Scaffold(
         body: Stack(
@@ -34,6 +45,9 @@ class QuestionScreen extends StatelessWidget {
               bottom: 25,
               child: CommonButton(
                 buttonText: '해답 들으러 가기',
+                onPressed: () {
+                  controller.onButtonClicked();
+                }
               ),
             ),
           ]
