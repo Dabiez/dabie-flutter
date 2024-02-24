@@ -2,7 +2,12 @@ import 'package:flutter/material.dart';
 
 class CommonButton extends StatelessWidget {
   final String buttonText;
-  CommonButton({required this.buttonText});
+  final VoidCallback onPressed;
+
+  CommonButton({
+    required this.buttonText,
+    required this.onPressed,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -21,9 +26,8 @@ class CommonButton extends StatelessWidget {
         style: ButtonStyle(
           backgroundColor: MaterialStateProperty.all(Color(0xFF4C3220)),
           minimumSize: MaterialStateProperty.all(Size(30, 65))
-        ), onPressed: () {
-          print('해답 버튼 클릭');
-        },
+        ),
+        onPressed: onPressed,
       ),
     );
   }

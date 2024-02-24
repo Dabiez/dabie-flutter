@@ -1,7 +1,7 @@
 import 'package:dabieflutter/common/common_answer_title.dart';
 import 'package:flutter/material.dart';
 import 'package:dabieflutter/views/start_view/widgets/background_svg_image.dart';
-import 'package:dabieflutter/views/start_view/widgets/center_character_animation.dart';
+import 'package:dabieflutter/common/center_character_animation.dart';
 import 'package:dabieflutter/views/start_view/widgets/start_button.dart';
 
 import '../../common/common_top_text_widget.dart';
@@ -27,7 +27,9 @@ class StartScreen extends StatelessWidget {
             BackgroundSvgImage(),
             CommonTopTextWidget(text: '여러분의 고민을 들어준다비~'),
             CommonAnswerTitle(text: '다비의 해답노드', fontSize: 52.0,),
-            CenterCharacterAnimation(),
+            CenterCharacterAnimation(
+              animationPath: 'assets/start_screen/main_character.json',
+            ),
             Positioned(
               left: 0,
               right: 0,
