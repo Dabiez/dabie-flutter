@@ -22,9 +22,8 @@ class CenterLoadingIndicator extends StatelessWidget {
             top: 490,
             child: CenterCharacterAnimation(
               animationPath: 'assets/loading_screen/loading.json',
-            )
-          )
-
+            ),
+          ),
         ],
       ),
     );

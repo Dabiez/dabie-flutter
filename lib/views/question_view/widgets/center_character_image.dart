@@ -1,7 +1,12 @@
+import 'package:dabieflutter/controllers/question_screen/question_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class CenterCharacterImage extends StatefulWidget {
+  final QuestionScreenController controller;
+
+  CenterCharacterImage({Key? key, required this.controller}) : super(key: key);
+
   @override
   _CenterCharacterImageState createState() => _CenterCharacterImageState();
 }
@@ -59,6 +64,9 @@ class _CenterCharacterImageState extends State<CenterCharacterImage> {
                       fontSize: 24,
                       color: Color(0xFF4C3220)
                   ),
+                  onChanged: (value) {
+                    widget.controller.updateUserInput(value);
+                  },
                   decoration: InputDecoration(
                     filled: true,
                     fillColor: Colors.white,

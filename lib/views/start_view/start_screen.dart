@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:dabieflutter/views/start_view/widgets/background_svg_image.dart';
 import 'package:dabieflutter/common/center_character_animation.dart';
 import 'package:dabieflutter/views/start_view/widgets/start_button.dart';
-
 import '../../common/common_top_text_widget.dart';
 import '../../controllers/start_screen/start_screen_controller.dart';
 import '../question_view/question_screen.dart';
