@@ -5,7 +5,7 @@ import 'package:dabieflutter/views/question_view/widgets/center_character_image.
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../common/common_button.dart';
-import '../result_view/widgets/background.dart';
+import '../../common/background.dart';
 
 class QuestionScreen extends StatelessWidget {
   final QuestionScreenController controller = QuestionScreenController();
