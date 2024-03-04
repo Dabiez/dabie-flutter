@@ -15,10 +15,10 @@ class QuestionScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          leading: IconButton(
-            icon: SvgPicture.asset('assets/icon/back_icon.svg', color: Colors.black),
-            onPressed: () => Navigator.of(context).pop(),
-          ),
+          // leading: IconButton(
+          //   icon: SvgPicture.asset('assets/icon/back_icon.svg', color: Colors.black),
+          //   onPressed: () => Navigator.of(context).pop(),
+          // ),
           backgroundColor: Color(0xFFFBD0AE),
           elevation: 0,
         ),
