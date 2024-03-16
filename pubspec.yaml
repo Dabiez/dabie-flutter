@@ -65,6 +65,7 @@ flutter:
     - assets/question_screen/question_main_image.svg
     - assets/loading_screen/balloon_character.svg
     - assets/loading_screen/loading.json
+    - assets/result_screen/qmark.svg
     - assets/result_screen/result_bg.svg
     - assets/result_screen/result_mark.svg
     - assets/result_screen/smart_characters.svg

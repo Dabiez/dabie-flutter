@@ -14,7 +14,7 @@ class BackgroundResult extends StatelessWidget {
         ),
         Positioned(
           right: 20,
-          bottom: 230,
+          bottom: 240,
           child: SvgPicture.asset(
             'assets/result_screen/smart_characters.svg',
             width: 100, // 적절한 너비 지정

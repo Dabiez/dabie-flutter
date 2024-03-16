@@ -7,11 +7,18 @@ import 'package:dabieflutter/views/result_view/result_screen.dart';
 class QuestionScreenController {
   final _buttonClicked = PublishSubject<void>();
   final _userInput = BehaviorSubject<String>.seeded("");
+  VoidCallback? updateQuestionLabel;
 
   Stream<String> get userInput => _userInput.stream;
 
+  String getUserInputValue() {
+    return _userInput.value!;
+  }
+
   void updateUserInput(String input) {
     _userInput.sink.add(input);
+    print("updateUserInput called with input: $input");
+    updateQuestionLabel?.call();
   }
 
   Stream<void> get buttonClicked => _buttonClicked.stream;
@@ -24,10 +31,11 @@ class QuestionScreenController {
     }
     else {
       Navigator.of(context).push(MaterialPageRoute(builder: (context) => LoadingScreen()));
-
       Future.delayed(Duration(seconds: 2), () {
         Navigator.of(context).pop();
-        Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultScreen()));
+        // Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultScreen()));
+        Navigator.of(context).push(MaterialPageRoute(builder: (context) => ResultScreen(userInput: _userInput.value!)));
+
       });
     }
   }

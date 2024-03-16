@@ -1,6 +1,7 @@
 import 'package:dabieflutter/controllers/result_screen/result_screen_controller.dart';
 import 'package:dabieflutter/views/result_view/widgets/background_result.dart';
 import 'package:dabieflutter/views/result_view/widgets/balloon_label.dart';
+import 'package:dabieflutter/views/result_view/widgets/question_label.dart';
 import 'package:dabieflutter/views/result_view/widgets/save_button.dart';
 import 'package:dabieflutter/views/result_view/widgets/share_button.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,10 @@ import '../../common/common_button.dart';
 
 class ResultScreen extends StatelessWidget {
   final ResultScreenController controller = ResultScreenController();
+  final String userInput;
   final GlobalKey _repaintBoundaryKey = GlobalKey();
+
+  ResultScreen({Key? key, required this.userInput}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +24,13 @@ class ResultScreen extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               BackgroundResult(),
-              // BalloonLabel(text: "Hello, DabiezHello"),
+              Align(
+                alignment: Alignment.topCenter,
+                child: Padding(
+                  padding: EdgeInsets.only(top: 70, left: 10),
+                  child: QuestionLabel(label: userInput),
+                ),
+              ),
               FutureBuilder<String>(
                 future: controller.getRandomAnswerText(),
                 builder: (context, snapshot) {
