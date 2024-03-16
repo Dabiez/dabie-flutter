@@ -11,14 +11,14 @@ class BalloonLabel extends StatelessWidget {
     return Container(
       width: 280,
       height: 280,
-      margin: EdgeInsets.only(left: 15, top: 130),
+      margin: EdgeInsets.only(left: 15, top: 160),
       child: Stack(
         alignment: Alignment.center,
         children: [
           SvgPicture.asset(
             'assets/result_screen/result_mark.svg',
-            width: 500,
-            height: 500,
+            width: 300,
+            height: 240,
           ),
           Container(
             padding: const EdgeInsets.all(8.0),

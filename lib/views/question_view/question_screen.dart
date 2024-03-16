@@ -6,19 +6,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../common/common_button.dart';
 import '../../common/background.dart';
+import '../result_view/widgets/question_label.dart';
 
 class QuestionScreen extends StatelessWidget {
   final QuestionScreenController controller = QuestionScreenController();
+  final GlobalKey<QuestionLabelState> questionLabelKey = GlobalKey();
+
+  QuestionScreen() {
+    controller.updateQuestionLabel = updateQuestionLabel;
+  }
+
+  void updateQuestionLabel() {
+    print("updateQuestionLabel called with input: ${controller.getUserInputValue()}");
+    questionLabelKey.currentState?.updateLabel(controller.getUserInputValue());
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          // leading: IconButton(
-          //   icon: SvgPicture.asset('assets/icon/back_icon.svg', color: Colors.black),
-          //   onPressed: () => Navigator.of(context).pop(),
-          // ),
           backgroundColor: Color(0xFFFBD0AE),
           elevation: 0,
         ),
@@ -44,7 +51,7 @@ class QuestionScreen extends StatelessWidget {
               right: 0,
               bottom: 0,
               top: -90,
-              child: CenterCharacterImage(controller: controller,),
+              child: CenterCharacterImage(controller: controller),
             ),
             Positioned(
               left: 0,
